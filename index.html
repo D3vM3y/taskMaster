@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Task List</h1>
+        <form id="new-task-form">
+            <input id="new-task-input" type="text" placeholder="What do you plan to do?">
+            <input id="new-task-submit" type="submit" value="Add task">
+        </form>
+        <!-- <h1>Book Library</h1>
+        <form id="new-book-form">
+            <div class="input-group">
+                <label for="new-title-input">Title</label>
+                <input id="new-title-input" type="text" placeholder="Title">
+            </div>
+            <div>
+                <label for="new-author-input">Author</label>
+                <input id="new-author-input" type="text" placeholder="Author">
+            </div>
+            <div>
+                <label for="new-pages-input">Pages</label>
+                <input id="new-pages-input" type="number" placeholder="Pages">
+            </div>
+            <div>
+                <label for="new-read-input">Finished</label>
+                <input id="new-read-input" type="checkbox" placeholder="Read">
+            </div>
+            <input id="new-book-submit" type="submit" value="Add Book">
+        </form> -->
+    </header>
+
+    <main>
+        <section class="task-list">
+            <h2>Tasks</h2>
+
+            <div id="tasks">
+                <div class="task">
+                    <div class="content">
+                        <input type="text" class="text" value="My task" readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="task">
+                    <div class="content">
+                        <input type="text" class="text" value="My task" readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="book-list">
+            <h2>Books</h2>
+
+            <div id="books">
+                <div class="book">
+                    <div class="content">
+                        <input type="text" class="title" value="Title" readonly>
+                        <input type="text" class="author" value="Author" readonly>
+                        <input type="text" class="pages" value="Pages" readonly>
+                        <input type="checkbox" class="read" value="Read" readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="read">Read</button>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section> -->
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
