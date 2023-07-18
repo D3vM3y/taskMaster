@@ -6,6 +6,6 @@ window.addEventListener("load", () => {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        console.log("submit form");
+        console.log("submit form " + e.input);
     })
 })
