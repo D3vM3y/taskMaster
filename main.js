@@ -27,9 +27,10 @@ window.addEventListener("load", () => {
         localStorage.setItem("tasks", JSON.stringify(tasks));
 
         e.target.reset();
-
+        
         DisplayTasks();
     })
+    DisplayTasks();
 })
 
 function DisplayTasks(){
@@ -86,6 +87,18 @@ function DisplayTasks(){
             }
 
             DisplayTasks();
+        })
+
+        editButton.addEventListener("click", e => {
+            const input = content.querySelector("input");
+            input.removeAttribute("readonly");
+            input.focus();
+            input.addEventListener("blur", e => {
+                input.setAttribute("readonly", true);
+                task.content = e.target.value;
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+                DisplayTasks(); 
+            })
         })
     })
 
