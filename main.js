@@ -1,5 +1,20 @@
 window.addEventListener("load", () => {
+    //==== new content video====
+    tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const nameInput = document.querySelector("#name");
     const form = document.querySelector("#new-task-form");
+    // const newTodoForm = document.querySelector("#new-todo-form");
+
+    const username = localStorage.getItem("username") || "";
+
+    nameInput.value = username;
+
+    nameInput.addEventListener("change", e => {
+        localStorage.setItem("username" , e.target.value);
+    })
+
+    //==== end of new content form ====
+    // const form = document.querySelector("#new-task-form");
     const input = document.querySelector("#new-task-input");
     const list_el = document.querySelector("#tasks");
 
