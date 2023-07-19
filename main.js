@@ -27,8 +27,69 @@ window.addEventListener("load", () => {
         localStorage.setItem("tasks", JSON.stringify(tasks));
 
         e.target.reset();
+
+        DisplayTasks();
     })
 })
+
+function DisplayTasks(){
+    const tasklist = document.querySelector(".task-list");
+
+    tasklist.innerHTML = "";
+
+    tasks.forEach(task => {
+        const taskItem = document.createElement("div");
+        taskItem.classList.add("task-item");
+
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        const span = document.createElement("span");
+        const content = document.createElement("div");
+        const actions = document.createElement("div");
+        const editButton = document.createElement("button");
+        const deleteButton = document.createElement("button");
+
+        input.type = "checkbox";
+        input.checked = task.done;
+
+        content.classList.add("task-content");
+        actions.classList.add("actions");
+        editButton.classList.add("edit");
+        deleteButton.classList.add("delete");
+
+        content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
+        editButton.innerHTML = "Edit";
+        deleteButton.innerHTML = "Delete";
+
+        label.appendChild(input);
+        label.appendChild(span);
+        actions.appendChild(editButton);
+        actions.appendChild(deleteButton);
+        taskItem.appendChild(label);
+        taskItem.appendChild(content);
+        taskItem.appendChild(actions);
+
+        tasklist.appendChild(taskItem);
+
+        if(task.done) {
+            taskItem.classList.add("done");
+        }
+
+        input.addEventListener("click", e => {
+            task.done = e.target.checked;
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+
+            if(task.done) {
+                taskItem.classList.add("done");
+            }else {
+                taskItem.classList.remove("done");
+            }
+
+            DisplayTasks();
+        })
+    })
+
+}
 
     //==== end of new content form ====
     // const form = document.querySelector("#new-task-form");
