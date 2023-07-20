@@ -143,11 +143,12 @@ input[type="checkbox"] {
     box-shadow: var(--personal-glow);
 }
 
-input:checked ∼ .bubble::after {
+input:checked ~ .bubble::after {
     width: 10px;
     height: 10px;
     opacity: 1;
 }
+
 /* 
 body {
     display: flex;
